@@ -7,11 +7,11 @@ module.exports = {
 			logo: ["Source Sans Pro"],
 		},
 		colors: {
-			background: "#FEF4EE",
-			primary: "#D3D9EF",
-			secondary: "#DBDEE9",
-			contast: "#403F3E",
-			message: "#f50505",
+			background: "#1a1a1a",  // dark background
+			primary: "#F5DEB3",    // Wheat color, a light beige
+			secondary: "#D2B48C",  // Tan color, a darker beige
+			contast: "#e6e6e6",    // light color for contrast on dark background
+			message: "#f50505",    // keep bright colors bright for contrast
 		},
 		extend: {},
 	},

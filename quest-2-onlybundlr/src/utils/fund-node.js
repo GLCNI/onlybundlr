@@ -10,5 +10,16 @@ import { getBundlr } from "./get-bundlr";
  * @returns "Node funded" if successful or an error message.
  */
 export const fundNode = async (fundAmount) => {
-	// BUILDOOOORS: Complete this
+	try {
+		// get a refernce to the WebBundlr singleton
+		const bundlr = await getBundlr();
+ 
+		const fundAmountAtomic = bundlr.utils.toAtomic(fundAmount);
+		const tx = await bundlr.fund(fundAmountAtomic);
+		return "Node funded";
+	} catch (e) {
+		console.log("Error on fund ", e);
+		return "Error on fund: " + e;
+	}
+	return "";
 };

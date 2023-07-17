@@ -7,7 +7,11 @@ const SuggestedProfile = ({ handle }) => {
 	const [coverPicture, setCoverPicture] = useState("");
 
 	useEffect(() => {
-		// BUILDOOOORS: Complete this
+		if (profile) {
+			setProfilePicture(profile.picture?.original.url);
+			setCoverPicture(profile.coverPicture?.original.url);
+			console.log(profile);
+		}
 	}, [loading]);
 
 	return (

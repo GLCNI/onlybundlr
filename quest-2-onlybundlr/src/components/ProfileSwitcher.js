@@ -19,7 +19,18 @@ const ProfileSwitcher = ({ showCreateNew }) => {
 
 	// Called when the user clicks "save new profile"
 	const doCreateProfile = async () => {
-		// BUILDOOOORS: Complete this
+		setMessage("");
+		setTxActive(true);
+		try {
+			setMessage("Creating profile ...");
+			const tx = await createNewProfile(newProfileHandle);
+			setMessage("Profile created.");
+		} catch (e) {
+			setMessage("Error creating profile " + e);
+			console.log("Error on create profile ", e);
+		}
+		setTxActive(false);
+		setCreateProfileMode(false);
 	};
 
 	useEffect(() => {
